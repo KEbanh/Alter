@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<title>Rabattberechner</title>
+		
+				
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	</head>
+			<body>
+				<h1>Altersprüfung</h1>
+				
+					<script>
+
+					function fAlter() {
+					var vZahl;
+					var vAlter;
+					var vAusgabeHtml="";
+					
+					vAlter = document.getElementById("idAlter").value;
+
+					if(vAlter%2==0) {
+					vZahl= "gerade ";
+					}
+					if(vAlter%2 > 0){
+					vZahl= "ungerade";
+					}
+					
+					
+					if (vAlter<18) {
+					
+					vAusgabeHtml=vAusgabeHtml + "Sie sind noch nicht volljährig! - und ihr Alter ist eine " +vZahl+ " Zahl";
+				
+				}
+
+					else if (vAlter<67) {
+					
+					vAusgabeHtml=vAusgabeHtml + "Volljährig! - und ihr Alter ist eine " +vZahl+ " Zahl";;
+
+					
+					}
+					
+					else {
+					
+					vAusgabeHtml=vAusgabeHtml + "Rentner- und ihr Alter ist eine " +vZahl+ " Zahl";
+					
+					}
+					
+						
+					document.getElementById("idAusgabeHtml").innerHTML=vAusgabeHtml;
+
+					}
+
+					</script>
+			Alter eingeben: <input id="idAlter" type="text" size="5" value="3">
+			
+			<button onClick="fAlter()">Prüfe!</button>
+		</br></br>
+			<div id="idAusgabeHtml">
+
+			</div>
+			<br>
+
+</html>
